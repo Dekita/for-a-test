@@ -16,8 +16,11 @@ groupArrayElements([1,2,3,4], 3)
 // => [[1,2,3],[4]]
 
 groupArrayElementsToObject([1,2,3,4], 2)
-// => {0:[1,2], 1:[3,4]}
+// => {0:[1,2], 1:[3,4], length:2}
 
 groupArrayElementsToObject([1,2,3,4], 3)
-// => {0:[1,2,3], 1:[4]}
+// => {0:[1,2,3], 1:[4], length:2}
 ```
+
+
+Edit: Made a small change to add length property to object returned by 'groupArrayElementsToObject' function. This seemed desirable.
