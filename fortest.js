@@ -47,9 +47,9 @@ function groupArrayElementsToObject(array, n){
         // set the return object with new_object_id to
         // contain the array element group, then increase new_object_id.
         return_object[new_object_id++] = temp_array.splice(0,n);
-        // store the length like we do with arrays (length 1 more than last element index)
-        return_object.length = new_object_id;
     }
+    // store the length like we do with arrays (length 1 more than last element index)
+    return_object.length = new_object_id;
     // return the new object containing array groups
     return return_object;
 }
