@@ -31,9 +31,9 @@ function groupArrayElements(array, n){
 * with the difference that an object is returned, not an array.
 * Example: 
 * groupArrayElementsToObject([1,2,3,4], 2)
-* => {0:[1,2], 1:[3,4]}
+* => {0:[1,2], 1:[3,4], length: 2}
 * groupArrayElementsToObject([1,2,3,4], 3)
-* => {0:[1,2,3], 1:[4]}
+* => {0:[1,2,3], 1:[4], length: 2}
 */
 function groupArrayElementsToObject(array, n){
     // store temp index for object
@@ -47,6 +47,8 @@ function groupArrayElementsToObject(array, n){
         // set the return object with new_object_id to
         // contain the array element group, then increase new_object_id.
         return_object[new_object_id++] = temp_array.splice(0,n);
+        // store the length like we do with arrays (length 1 more than last element index)
+        return_object.length = new_object_id;
     }
     // return the new object containing array groups
     return return_object;
